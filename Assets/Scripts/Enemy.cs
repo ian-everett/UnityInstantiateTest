@@ -11,7 +11,7 @@ public class Enemy : MonoBehaviour
     private void Start()
     {
         Rigidbody2D rb = GetComponent<Rigidbody2D>();
-        float gravity = Random.Range(0.05f, 0.3f);
+        float gravity = Random.Range(0.01f, 0.1f);
         float rotation = Random.Range(0, 360);
 
         rb.rotation = rotation;
@@ -21,7 +21,7 @@ public class Enemy : MonoBehaviour
     }
 
 
-    private void OnTriggerEnter2D(Collider2D collision)
+    private void OnTriggerExit2D(Collider2D collision)
     {
         if (collision.tag == "Floor")
         {
